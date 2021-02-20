@@ -3,7 +3,7 @@ variables:
   minorVersion: 1
   patchVersion: 0
   version: $[format('{0}.{1}.{2}', variables.majorVersion, variables.minorVersion, variables.patchVersion)]
-  ${{ if eq(variables['Build.SourceBranch'], 'refs/heads/master') }}:
+  ${{ if eq(variables['Build.SourceBranch'], 'refs/heads/main') }}:
     # Versioning: 1.0.0
     releaseOnNuget: true
     semVersion: $[format('{0}', variables.version)]
@@ -42,7 +42,7 @@ name: $(BuildID) - $(buildName)
 trigger:
   branches:
     include:
-      - master
+      - main
       - develop
       - feature/*
       - release/*
@@ -54,7 +54,7 @@ trigger:
 pr:
   branches:
     include:
-      - master
+      - main
       - develop
   paths:
     exclude:
