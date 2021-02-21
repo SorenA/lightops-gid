@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.1] - 2021-02-21
+
+### Added
+
+- `IGidFactory` and implementation `GidFactory` to create new gid
+
 ## [0.1.0] - 2021-02-20
 
 ### Added
@@ -20,5 +26,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Dependency Injection component for service registration in the service container
 - `IDependencyInjectionRootComponent` extension `AddGid` to attach component to root component
 
-[unreleased]: https://github.com/SorenA/lightops-gid/compare/0.1.0...develop
+[unreleased]: https://github.com/SorenA/lightops-gid/compare/0.1.1...develop
+[0.1.1]: https://github.com/SorenA/lightops-gid/tree/0.1.1
 [0.1.0]: https://github.com/SorenA/lightops-gid/tree/0.1.0
