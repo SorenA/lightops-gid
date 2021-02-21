@@ -4,7 +4,6 @@ using LightOps.Gid.Api.Services;
 namespace LightOps.Gid.Test.Mock
 {
     public class NullGidParser : IGidParser
-
     {
         public bool IsValid(string gid)
         {

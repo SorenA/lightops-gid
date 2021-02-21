@@ -17,6 +17,10 @@ The package defines the following concepts.
 
 Parses and validates gid.
 
+### Gid factory- `IGidFactory` and implementation `GidFactory`
+
+Factory for creating new gid.
+
 ## Attaching the component
 
 Register during startup through the `AddGid` extension on `IDependencyInjectionRootComponent`.

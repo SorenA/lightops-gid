@@ -68,5 +68,24 @@ namespace LightOps.Gid.Test.Tests
 
             Assert.IsType<NullGidParser>(serviceProvider.GetService<IGidParser>());
         }
+
+        [Fact]
+        public void TestComponent_Override_GidFactory()
+        {
+            var services = new ServiceCollection();
+
+            // Add component
+            services.AddLightOpsDependencyInjection(root =>
+            {
+                root.AddGid(component =>
+                {
+                    component.OverrideGidFactory<NullGidFactory>();
+                });
+            });
+
+            var serviceProvider = services.BuildServiceProvider();
+
+            Assert.IsType<NullGidFactory>(serviceProvider.GetService<IGidFactory>());
+        }
     }
 }

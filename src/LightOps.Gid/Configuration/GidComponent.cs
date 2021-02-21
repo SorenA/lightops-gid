@@ -22,11 +22,13 @@ namespace LightOps.Gid.Configuration
         internal enum Services
         {
             GidParser,
+            GidFactory,
         }
 
         private readonly Dictionary<Services, ServiceRegistration> _services = new Dictionary<Services, ServiceRegistration>
         {
             [Services.GidParser] = ServiceRegistration.Transient<IGidParser, GidParser>(),
+            [Services.GidFactory] = ServiceRegistration.Transient<IGidFactory, GidFactory>(),
         };
 
         public IGidComponent OverrideGidParser<T>()
@@ -35,6 +37,14 @@ namespace LightOps.Gid.Configuration
             _services[Services.GidParser].ImplementationType = typeof(T);
             return this;
         }
+
+        public IGidComponent OverrideGidFactory<T>()
+            where T : IGidFactory
+        {
+            _services[Services.GidFactory].ImplementationType = typeof(T);
+            return this;
+        }
+
         #endregion Services
     }
 }
